@@ -12,6 +12,9 @@ destino = input("Ingrese la ciudad de destino: ")
 dia_semana = input("Ingrese el día de la semana en el que desea viajar (por ejemplo, lunes): ").lower()
 dia_mes = int(input("Ingrese el día del mes (un número entre 1 y 30): "))
 
+print("Tipos de asientos disponibles:\nC. Pasillo \nA. Ventana\nB. Sin preferencia")
+tipo_asiento = input("Ingrese el tipo de asiento que prefiere (C, A o B): ").upper()
+
 if (origen == 'Medellín' and destino == 'Bogotá') or (origen == 'Bogotá' and destino == 'Medellín'):
     print("Ruta seleccionada: Medellín - Bogotá")
     distancia = 240
@@ -25,6 +28,7 @@ elif (origen == 'Bogotá' and destino == 'Cartagena') or (origen == 'Cartagena' 
 
 else:
     print("Error: Ruta no válida.")
+    distancia = 0
  
 if distancia < 400:
     precio = [79900, 119900]
@@ -37,15 +41,6 @@ if dia_semana == "viernes" or dia_semana == "sábado" or dia_semana == "domingo"
 else:
     precio = precio[0]  
 
-preferencia = input("¿Prefiere un asiento en el pasillo, junto a la ventana o sin preferencia? ").lower()
-
-if preferencia == "pasillo":
-    asiento = f"{numero_asiento}C"
-elif preferencia == "ventana":
-    asiento = f"{numero_asiento}A"
-else:
-    asiento = f"{numero_asiento}B"
-
 numero_asiento = random.randint(1, 29)
 
 print("\n--- Detalles de su reserva ---")
@@ -54,4 +49,4 @@ print(f"Origen: {origen}")
 print(f"Destino: {destino}")
 print(f"Fecha de vuelo: {dia_semana.capitalize()} {dia_mes}")
 print(f"Precio del boleto: ${precio:,}")
-print(f"Asiento asignado: {asiento}")
+print(f"Asiento asignado: {numero_asiento}")
