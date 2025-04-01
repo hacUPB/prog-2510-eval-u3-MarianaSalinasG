@@ -1,3 +1,4 @@
+
 def conversionDePuntuacion(puntuacion:int):
     if puntuacion < 0:
         letra = 'Puntaje no válido'
