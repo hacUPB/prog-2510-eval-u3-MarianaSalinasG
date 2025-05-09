@@ -7,3 +7,6 @@ if valor_compra >= 100000:
     envio = 0
 total = valor_compra + envio
 print(f"El total a pagar es: {total}")
+
+
+
